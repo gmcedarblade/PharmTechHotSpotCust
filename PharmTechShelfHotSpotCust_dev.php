@@ -11,19 +11,8 @@ session_start();
     <link rel="stylesheet" type="text/css" href="https://www.wisc-online.com/ARISE_Files/CSS/AriseMainCSS.css?random=pasadsdsds25235h">
 </head>
 <style>
-    #add {
-        background-color: #E5DEEE;
-        border: 1px solid #604383;
-        border-radius: 5px;
-        box-shadow: inset 0 0 0 1px #a389c2;
-        color: #604383;
-        display: inline-block;
-        float: left;
-        font-family:Georgia, Sans-Serif;
-        font-size: 1rem;
-        margin: 0.5em;
-        min-width: 200px;
-        padding: 6px;
+    button {
+        float: none;
     }
 </style>
 <body style="text-align: center;" id="body">
@@ -47,11 +36,9 @@ session_start();
     <area id="drug14" name="Test5" shape="rect" coords="482,843,723,1124">
     <area id="drug15" name="Test6" shape="rect" coords="723,843,964,1124">
 </map>
-<div style="height: 20px; text-align:center">
+<div style="height: 20px;">
     <button class="submit" id="clear">Clear Selections</button>
-<!--    <form action="--><?//=htmlspecialchars($_SERVER['PHP_SELF'])?><!--" method="post">-->
     <button type="button" class="submit" id="add" name="Add" value="Add">Add</button>
-<!--    </form>-->
     <button class="submit" id="home">Home</button>
 </div>
 </body>
@@ -243,12 +230,6 @@ session_start();
         }
 
         var mData = JSON.stringify(results);
-//        alert(myData);
-//
-//        var request = new XMLHttpRequest();
-//        request.open("GET", "http://localhost:63342/PharmTechHotSpotCust/PharmTechShelfHotSpotCust_dev.php?data=" + myData, true);
-//        //request.setRequestHeader("Content-type", "application/json");
-//        request.send(myData);
 
         $.ajax({
 //            url: "http://localhost:63342/PharmTechHotSpotCust/PharmTechShelfHotSpotCust_dev.php",
@@ -256,6 +237,20 @@ session_start();
             data: {myData: mData},
             success: function (mData) {
                 console.log("it worked" + mData);
+
+                $confirmationPopOver = $('<div></div>');
+                $('#map').append($confirmationPopOver);
+                $confirmationPopOver.text("You have added the selected medications to the order.");
+                $confirmationPopOver.width(625).height(80).css({
+                    backgroundColor: "white",
+                    position: "absolute",
+                    left: "170px",
+                    top: "525px",
+                    fontSize: "38px",
+                    padding: "20px"
+                }).hide().fadeIn(1500).delay(2000).fadeOut(3000);
+
+
             },
             error: function (e) {
                 console.log("Error: " + e.message);
@@ -272,7 +267,7 @@ session_start();
 <?php
 
 if(isset($_SESSION['savedDrugs'])) {
-    echo "<h1>HELLO!!</h1>" . $_SESSION['savedDrugs'];
+    //echo $_SESSION['savedDrugs'];
 }
 if(isset($_GET['myData'])) {
     $_SESSION['savedDrugs'] = $_GET['myData'];
