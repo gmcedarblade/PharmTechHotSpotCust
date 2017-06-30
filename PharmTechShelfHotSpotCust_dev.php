@@ -50,6 +50,7 @@ session_start();
     <button type="button" class="submit" id="add" name="Add" value="Add">Add</button>
     <button class="submit" id="home" onclick="location.href='https://www.wisc-online.com/ARISE_Files/Experimental/Hot%20Spot/Pharm_Tech/PharmTechARISEHome_dev.php?random=slsdfdkfj'">Home</button>
     <button class="submit" id="dailyMed" onclick="location.href='https://dailymed.nlm.nih.gov/dailymed/';">Daily Med</button>
+    <button class="submit" id="home">Home</button>
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -282,7 +283,8 @@ session_start();
 
             });
 
-        }
+
+
 
     }, false);
 
