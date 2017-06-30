@@ -48,7 +48,7 @@ session_start();
 <div style="height: 20px;">
     <button class="submit" id="clear">Clear Selections</button>
     <button type="button" class="submit" id="add" name="Add" value="Add">Add</button>
-    <button class="submit" id="home" onclick="location.href='https://www.wisc-online.com/ARISE_Files/Experimental/Hot%20Spot/Pharm_Tech/PharmTechARISEHome_dev.php?random=slsdfdkfj'">Home</button>
+    <button class="submit" id="home" onclick="location.href='https://www.wisc-online.com/ARISE_Files/Experimental/Hot%20Spot/Pharm_Tech/PharmTechARISEHome_dev.php?random=ksdfsdf'">Home</button>
     <button class="submit" id="dailyMed" onclick="location.href='https://dailymed.nlm.nih.gov/dailymed/';">Daily Med</button>
 </div>
 </body>
@@ -294,7 +294,7 @@ session_start();
 if(isset($_GET['myData'])) {
     $_GET['myData'] = json_decode($_GET['myData']);
 
-    $_SESSION['savedDrugs']['a2fTabs'] = $_GET['myData'];
+    $_SESSION['savedDrugs']['g2lTabs'] = $_GET['myData'];
 
 }
 ?>
