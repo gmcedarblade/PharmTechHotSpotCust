@@ -283,9 +283,7 @@ session_start();
             });
 
         }
-
-
-
+        
     }, false);
 
 </script>

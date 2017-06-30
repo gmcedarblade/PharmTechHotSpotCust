@@ -39,6 +39,7 @@ if(!isset($_SESSION)) {
         }
     </style>
 </head>
+
 <body id="body">
 
 <img src="https://www.wisc-online.com/ARISE_Files/PharmTechCustomization/Pharmacy-Floorplan.png" width="100%">
@@ -122,6 +123,5 @@ if(!isset($_SESSION)) {
 
         };
     }
-
 </script>
 </html>
